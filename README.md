@@ -34,7 +34,7 @@ Else if the value defined and not a string we simply call <code>toString()</code
 Note that <code>Metadata</code> only accept string or buffer values.
 
 **Kind**: Exported function  
-**Returns**: <code>Metadata</code> - An instance of <code>Metadata</code>  
+**Returns**: <code>Metadata</code> - An instance of <code>Metadata</code>, or `undefined` if input is not an object  
 
 | Param | Type | Description |
 | --- | --- | --- |
