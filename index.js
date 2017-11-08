@@ -1,5 +1,5 @@
 const grpc = require('grpc')
-const _ = require('lodash')
+const forOwn = require('lodash.forown')
 
 /**
  * Simple Node.js helper utility for creating gRPC metadata
@@ -31,11 +31,11 @@ const _ = require('lodash')
  *                           If an instance of <code>Metadata</code> is passed in it is simply returned
  * @param  {Object} options options
  * @param  {Boolean} options.addEmpty whether to add empty strings. Default: <code>false</code>
- * @return {Metadata}        An instance of <code>Metadata</code>
+ * @return {Metadata} An instance of <code>Metadata</code>, or `undefined` if input is not an object
  */
 module.exports = function create (metadata, options) {
-  if (!_.isObject(metadata)) {
-    return metadata
+  if (!isObject(metadata)) {
+    return
   }
 
   if (metadata instanceof grpc.Metadata) {
@@ -43,11 +43,11 @@ module.exports = function create (metadata, options) {
   }
 
   const meta = new grpc.Metadata()
-  _.forOwn(metadata, (v, k) => {
+  forOwn(metadata, (v, k) => {
     if (Buffer.isBuffer(v)) {
       meta.add(k, v)
-    } else if (!_.isNull(v) && !_.isUndefined(v)) {
-      const toAdd = _.isString(v) ? v : v.toString()
+    } else if (v !== null && !isUndefined(v)) {
+      const toAdd = isString(v) ? v : v.toString()
       if (toAdd || (options && options.addEmpty)) {
         meta.add(k, toAdd)
       }
@@ -55,4 +55,19 @@ module.exports = function create (metadata, options) {
   })
 
   return meta
+}
+
+function isObject (value) {
+  const type = typeof value
+  return value !== null && type === 'object'
+}
+
+function isString (value) {
+  const type = typeof value
+  return type === 'string'
+}
+
+function isUndefined (value) {
+  const type = typeof value
+  return value !== null && type === 'undefined'
 }

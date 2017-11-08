@@ -54,3 +54,9 @@ test('should return new metadata and add empty strings when option set', t => {
   t.true(ret instanceof grpc.Metadata)
   t.deepEqual(ret.getMap(), input)
 })
+
+test('should get undefined on invalid object', t => {
+  const input = 1
+  const ret = create(input)
+  t.is(ret, undefined)
+})
