@@ -1,6 +1,8 @@
 <a name="module_grpc-create-metadata"></a>
 
 ### grpc-create-metadata
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/bojand/grpc-create-metadata.svg)](https://greenkeeper.io/)
 Simple Node.js helper utility for creating gRPC metadata
 
 **Example** *(Installation)*  
