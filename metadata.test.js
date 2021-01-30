@@ -1,5 +1,5 @@
-import test from 'ava'
-const grpc = require('grpc')
+const test = require('ava')
+const grpc = require('@grpc/grpc-js')
 
 const create = require('./')
 

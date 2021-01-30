@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava -v",
-    "docs": "jsdoc2md index.js --heading-depth 3 | md-wrap-code > README.md"
+    "docs": "jsdoc2md index.js --heading-depth 3 > README.md"
   },
   "repository": {
     "type": "git",
@@ -30,14 +30,13 @@
     "lodash.forown": "^4.4.0"
   },
   "peerDependencies": {
-    "grpc": "^1.0.0"
+    "@grpc/grpc-js": "^1.2.5"
   },
   "devDependencies": {
-    "ava": "^0.24.0",
-    "grpc": "^1.8.4",
-    "jsdoc-to-markdown": "^4.0.0",
-    "md-wrap-code": "^0.1.1",
-    "standard": "^10.0.0"
+    "ava": "^3.15.0",
+    "@grpc/grpc-js": "^1.2.5",
+    "jsdoc-to-markdown": "^6.0.1",
+    "standard": "^16.0.0"
   },
   "directories": {
     "test": "test"

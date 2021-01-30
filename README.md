@@ -4,13 +4,10 @@
 Simple Node.js helper utility for creating gRPC metadata
 
 **Example** *(Installation)*  
-
 ```js
 npm install grpc-create-metadata
 ```
-
 **Example** *(Usage)*  
-
 ```js
 const grpc = require('grpc')
 const create = require('grpc-create-metadata')
@@ -22,7 +19,6 @@ const meta = create({
 console.log(meta instanceof grpc.Metadata) // true
 console.dir(meta.getMap()) // { foo: 'bar', age: '12', prop: 'true' }
 ```
-
 <a name="exp_module_grpc-create-metadata--module.exports"></a>
 
 #### module.exports(metadata, options) ⇒ <code>Metadata</code> ⏏
