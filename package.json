@@ -1,6 +1,6 @@
 {
   "name": "grpc-create-metadata",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A simple Node.js helper utility for creating gRPC metadata",
   "main": "index.js",
   "scripts": {
